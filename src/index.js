@@ -17,7 +17,7 @@ function App() {
       });
       setMessage('Registrazione riuscita! Token: ' + res.data.token.substring(0, 20) + '...');
     } catch (err) {
-      setMessage('Errore: ' + err.response?.data?.error || err.message);
+      setMessage('Errore: ' + (err.response?.data?.error || err.message));
     }
   };
 
@@ -29,25 +29,25 @@ function App() {
         placeholder="Username" 
         value={username} 
         onChange={(e) => setUsername(e.target.value)}
-        style={{display: 'block', margin: '10px 0', padding: '10px', width: '100%'}}
+        style={{display: 'block', margin: '10px 0', padding: '10px', width: '100%', boxSizing: 'border-box'}}
       />
       <input 
         placeholder="Email" 
         value={email} 
         onChange={(e) => setEmail(e.target.value)}
-        style={{display: 'block', margin: '10px 0', padding: '10px', width: '100%'}}
+        style={{display: 'block', margin: '10px 0', padding: '10px', width: '100%', boxSizing: 'border-box'}}
       />
       <input 
         type="password"
         placeholder="Password" 
         value={password} 
         onChange={(e) => setPassword(e.target.value)}
-        style={{display: 'block', margin: '10px 0', padding: '10px', width: '100%'}}
+        style={{display: 'block', margin: '10px 0', padding: '10px', width: '100%', boxSizing: 'border-box'}}
       />
-      <button onClick={handleRegister} style={{padding: '10px 20px', marginTop: '10px'}}>
+      <button onClick={handleRegister} style={{padding: '10px 20px', marginTop: '10px', cursor: 'pointer'}}>
         Registrati
       </button>
-      {message && <p style={{marginTop: '20px', padding: '10px', background: '#f0f0f0'}}>{message}</p>}
+      {message && <p style={{marginTop: '20px', padding: '10px', background: '#f0f0f0', borderRadius: '5px'}}>{message}</p>}
     </div>
   );
 }
